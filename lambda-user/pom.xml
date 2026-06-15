@@ -95,6 +95,8 @@
                         <configuration>
                             <shadedArtifactAttached>true</shadedArtifactAttached>
                             <shadedClassifierName>aws</shadedClassifierName>
+                            <!-- dependency-reduced-pom.xmlの生成を無効化する（Lambdaは他のプロジェクトから依存されないため不要） -->
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                             <transformers>
                                 <!-- サービスファイルをマージする -->
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>

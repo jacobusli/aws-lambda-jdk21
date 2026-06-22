@@ -1,3 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.test.config": {
+        "env": {
+            "LANG": "C",
+            "LC_ALL": "C",
+            "LC_MESSAGES": "C"
+        }
+    }
 }

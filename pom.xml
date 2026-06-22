@@ -124,6 +124,16 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.2.5</version>
+                    <configuration>
+                        <!-- ファイルエンコーディングをUTF-8に統一する -->
+                        <argLine>-Dfile.encoding=UTF-8</argLine>
+                        <!-- initdbをCロケールで実行してログの文字化けを防ぐ -->
+                        <environmentVariables>
+                            <LANG>C</LANG>
+                            <LC_ALL>C</LC_ALL>
+                            <LC_MESSAGES>C</LC_MESSAGES>
+                        </environmentVariables>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

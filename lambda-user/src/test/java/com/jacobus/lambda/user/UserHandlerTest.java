@@ -24,7 +24,9 @@ class UserHandlerTest {
 
     @BeforeAll
     static void setUp() throws Exception {
-        pg = EmbeddedPostgres.start();
+        pg = EmbeddedPostgres.builder()
+                .setLocaleConfig("locale", "C")
+                .start();
 
         // DDLとDMLをクラスパスから順番に流し込む
         try (Connection conn = pg.getPostgresDatabase().getConnection()) {
